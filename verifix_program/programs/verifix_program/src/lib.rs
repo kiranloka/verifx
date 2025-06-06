@@ -13,3 +13,25 @@ pub mod verifix_program{
         Ok(())
     }
 }
+
+#[derive(Accounts)]
+#[instruction(file_name:String)]
+pub struct StoreHash<'info>{
+    #[account(
+        init,
+        payer=user,
+        space=8+32,
+        seeds=[user.key().as_ref(),file_name.as_bytes()],
+        bump
+    )]
+
+    pub file_hash:Account<'info,FileHash>,
+    #[account(mut)]
+    pub user:Signer<'info>,
+    pub system_program:Program<'info,System>,
+}
+
+#[account]
+pub struct FileHash{
+    pub hash:[u8;32],
+}
