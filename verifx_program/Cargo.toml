@@ -1,8 +1,14 @@
-[workspace]
-members = [
-    "programs/*"
-]
-resolver = "2"
+[package]
+name = "verifx_program"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anchor-lang = "0.24.2"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
 
 [profile.release]
 overflow-checks = true

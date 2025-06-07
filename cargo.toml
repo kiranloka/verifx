@@ -1,2 +1,2 @@
 [workspace]
-members=["verifix_program","verifx_cli"]
+members=["verifx_program","verifx_cli"]

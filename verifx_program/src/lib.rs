@@ -1,14 +1,14 @@
-use anchor_land::prelude::*;
+use anchor_lang::prelude::*;
 
-declare_id!("YourProgramid");
+declare_id!("3G7fYQpdrsuRSHPqSGoTBZunmxqLTXYZdrd9VwkUiUUs");
 
 
 #[program]
-pub mod verifix_program{
+pub mod verifx_program{
     use super::*;
 
     pub fn store_hash(ctx:Context<StoreHash>,file_name:String,hash:[u8;32])->Result<()>{
-        let file_hash=&mut ctx.account.file_hash;
+        let file_hash=&mut ctx.accounts.file_hash;
         file_hash.hash=hash;
         Ok(())
     }

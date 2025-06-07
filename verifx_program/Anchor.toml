@@ -12,7 +12,7 @@ verifix_program = "3G7fYQpdrsuRSHPqSGoTBZunmxqLTXYZdrd9VwkUiUUs"
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "localnet"
+cluster = "devnet"
 wallet = "~/.config/solana/id.json"
 
 [scripts]
